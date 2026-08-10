@@ -322,6 +322,20 @@
       <section id="flab" style="display:none;">
         <p>Therapeutic antibody candidates must exhibit strong developability properties: High conformational stability, high expression levels, low aggregation propensity, low polyreactivity, and low immunogenicity. Accurately predicting developability properties is critical to drug development success. Here, we present <strong>FLAb</strong>, a benchmark evaluating state-of-the-art protein AI models on real antibody developability data. FLAb serves as a guide for protein engineers selecting a model validated on wet lab data for their specific task, and as a resource for researchers benchmarking newly developed protein AI models.</p>
         <p>New models to be added...</p>
+
+        <div class="flab-datasets">
+          <h3 class="flab-section-heading">Benchmarks</h3>
+          <div class="dataset-entry" onclick="toggleDataset('gdpa1')">
+            <div class="dataset-header">
+              <span class="dataset-title">GDPa1 – Antibody Developability Profiling of 246 IgGs</span>
+              <span class="dataset-chevron" id="chevron-gdpa1">▾</span>
+            </div>
+            <p class="dataset-description">Biophysical assay results for 246 IgGs across 10 developability assays including titer, purity, aggregation, thermostability, colloidal stability, hydrophobicity, heparin binding, self-association, polyreactivity, and DLS-kD.</p>
+            <div class="dataset-results" id="results-gdpa1" style="display:none;">
+              <p class="dataset-results-placeholder">Benchmark results coming soon. <a href="https://huggingface.co/datasets/ginkgo-datapoints/GDPa1" target="_blank" onclick="event.stopPropagation()">View original data →</a></p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -399,6 +413,14 @@
     function updateNewsUI(index, maxIndex) {
       const fadeLeft = document.getElementById('newsFadeLeft');
       fadeLeft.style.opacity = index > 0 ? '1' : '0';
+    }
+
+    function toggleDataset(id) {
+      const results = document.getElementById('results-' + id);
+      const chevron = document.getElementById('chevron-' + id);
+      const isOpen = results.style.display !== 'none';
+      results.style.display = isOpen ? 'none' : '';
+      chevron.classList.toggle('open', !isOpen);
     }
 
     document.addEventListener('DOMContentLoaded', () => {

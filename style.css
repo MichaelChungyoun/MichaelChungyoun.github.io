@@ -415,3 +415,77 @@ a:hover {
 .news-stat svg {
   flex-shrink: 0;
 }
+
+/* ── FLAb section ── */
+#flab p {
+  margin-bottom: 1rem;
+  color: #222;
+  max-width: 680px;
+}
+
+.flab-datasets {
+  margin-top: 2rem;
+}
+
+.flab-section-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.dataset-entry {
+  max-width: 680px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: white;
+  transition: box-shadow 0.15s;
+}
+
+.dataset-entry:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.dataset-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.dataset-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.dataset-chevron {
+  color: #888;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.dataset-chevron.open {
+  transform: rotate(180deg);
+}
+
+.dataset-description {
+  font-size: 0.88rem;
+  color: #555;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.dataset-results {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dataset-results-placeholder {
+  font-size: 0.88rem;
+  color: #888;
+  font-style: italic;
+}
