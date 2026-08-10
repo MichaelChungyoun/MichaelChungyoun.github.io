@@ -336,23 +336,33 @@
 
     const CARD_STEP = 157; // 150px card + 7px gap
     let newsIndex = 0;
+    let nudging = false;
 
     function scrollNews(dir) {
+      if (nudging) return;
       const track = document.getElementById('newsTrack');
       const totalCards = track.querySelectorAll('.news-card').length;
       const maxIndex = totalCards - 4;
-      newsIndex = Math.max(0, Math.min(newsIndex + dir, maxIndex));
+      const newIndex = newsIndex + dir;
+
+      if (newIndex < 0 || newIndex > maxIndex) {
+        // Nudge and revert
+        nudging = true;
+        track.scrollTo({ left: newsIndex * CARD_STEP + dir * 22, behavior: 'smooth' });
+        setTimeout(() => {
+          track.scrollTo({ left: newsIndex * CARD_STEP, behavior: 'smooth' });
+          setTimeout(() => { nudging = false; }, 300);
+        }, 220);
+        return;
+      }
+
+      newsIndex = newIndex;
       track.scrollTo({ left: newsIndex * CARD_STEP, behavior: 'smooth' });
       updateNewsUI(newsIndex, maxIndex);
     }
 
     function updateNewsUI(index, maxIndex) {
-      const leftBtn = document.querySelector('.news-arrow-left');
-      const rightBtn = document.querySelector('.news-arrow-right');
       const fadeLeft = document.getElementById('newsFadeLeft');
-      const show = (el, on) => { el.style.opacity = on ? '1' : '0'; el.style.pointerEvents = on ? 'auto' : 'none'; };
-      show(leftBtn, index > 0);
-      show(rightBtn, index < maxIndex);
       fadeLeft.style.opacity = index > 0 ? '1' : '0';
     }
 
