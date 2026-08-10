@@ -294,3 +294,28 @@ a:hover {
   color: #444;
   line-height: 1.4;
 }
+
+.news-card-date {
+  font-size: 0.67rem;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+.news-card-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.news-stat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.67rem;
+  color: #666;
+}
+
+.news-stat-impressions {
+  color: #888;
+}
