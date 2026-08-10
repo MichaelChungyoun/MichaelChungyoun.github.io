@@ -347,6 +347,13 @@
       document.querySelector('.title').textContent = data.title;
       document.querySelector('.subtitle').textContent = data.subtitle;
       document.querySelector('.lab').textContent = data.lab;
+
+      const hide = id === 'flab' ? 'none' : '';
+      document.querySelector('.location').style.display = hide;
+      document.querySelector('.social-links').style.display = hide;
+      document.querySelector('.sidebar-divider').style.display = hide;
+      document.querySelector('.sidebar-email').style.display = hide;
+      document.querySelector('.cv-placeholder').style.display = hide;
     }
 
     const CARD_STEP = 157; // 150px card + 7px gap
