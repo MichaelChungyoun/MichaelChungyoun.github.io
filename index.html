@@ -343,14 +343,15 @@
         <div class="flab-datasets">
           <h3 class="flab-section-heading">Benchmarks</h3>
           <div class="filter-chips">
-            <button class="filter-chip">sequence</button>
-            <button class="filter-chip">sequence+structure</button>
-            <button class="filter-chip">binding affinity</button>
-            <button class="filter-chip">thermostability</button>
-            <button class="filter-chip">expression</button>
-            <button class="filter-chip">aggregation</button>
-            <button class="filter-chip">polyreactivity</button>
-            <button class="filter-chip">immunogenicity</button>
+            <button class="filter-chip" onclick="toggleChip(this)">sequence</button>
+            <button class="filter-chip" onclick="toggleChip(this)">sequence+structure</button>
+            <button class="filter-chip" onclick="toggleChip(this)">binding affinity</button>
+            <button class="filter-chip" onclick="toggleChip(this)">thermostability</button>
+            <button class="filter-chip" onclick="toggleChip(this)">expression</button>
+            <button class="filter-chip" onclick="toggleChip(this)">aggregation</button>
+            <button class="filter-chip" onclick="toggleChip(this)">polyreactivity</button>
+            <button class="filter-chip" onclick="toggleChip(this)">immunogenicity</button>
+            <button class="filter-chip-clear" onclick="clearChips()">✕ clear</button>
           </div>
           <div class="dataset-entry dataset-entry--summary">
             <strong class="dataset-title">Overall Developability Prediction Performance</strong>
@@ -479,6 +480,14 @@
     function updateNewsUI(index, maxIndex) {
       const fadeLeft = document.getElementById('newsFadeLeft');
       fadeLeft.style.opacity = index > 0 ? '1' : '0';
+    }
+
+    function toggleChip(el) {
+      el.classList.toggle('active');
+    }
+
+    function clearChips() {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
     }
 
     document.addEventListener('DOMContentLoaded', () => {

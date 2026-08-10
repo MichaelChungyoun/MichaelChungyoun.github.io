@@ -442,6 +442,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 0.75rem;
+  max-width: 680px;
 }
 
 .filter-chip {
@@ -460,6 +461,28 @@ a:hover {
   border-color: #888;
   color: #111;
   background: #f5f5f5;
+}
+
+.filter-chip.active {
+  border-color: #555;
+  background: #555;
+  color: white;
+}
+
+.filter-chip-clear {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.filter-chip-clear:hover {
+  color: #666;
 }
 
 .dataset-entry {
