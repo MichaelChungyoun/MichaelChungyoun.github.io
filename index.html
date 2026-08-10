@@ -52,7 +52,8 @@
     <!-- Main Content -->
     <main class="main-content">
       <nav class="tab-nav">
-        <a href="#" class="tab active">About</a>
+        <a href="#" class="tab active" onclick="showTab('about', this); return false;">About</a>
+        <a href="#" class="tab" onclick="showTab('flab', this); return false;">FLAb</a>
       </nav>
 
       <section id="about">
@@ -62,7 +63,20 @@
           options for patients.
         </p>
       </section>
+
+      <section id="flab" style="display:none;">
+        <h1 class="section-title">Fitness Landscapes for Antibodies</h1>
+      </section>
     </main>
   </div>
+
+  <script>
+    function showTab(id, el) {
+      document.querySelectorAll('.main-content section').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).style.display = '';
+      el.classList.add('active');
+    }
+  </script>
 </body>
 </html>
