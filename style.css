@@ -454,6 +454,15 @@ a:hover {
   background: #f5f8ff;
 }
 
+.dataset-entry--summary {
+  border-color: #b0c4de;
+  background: #f0f4fa;
+}
+
+.dataset-entry--summary:hover {
+  background: #e6edf8;
+}
+
 .dataset-title {
   font-size: 0.95rem;
 }
