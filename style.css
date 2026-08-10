@@ -93,7 +93,7 @@ a:hover {
 .flab-links {
   margin-top: 10px;
   margin-left: -4px;
-  gap: 2px;
+  gap: 10px;
 }
 
 .flab-links a {
@@ -102,7 +102,6 @@ a:hover {
   justify-content: center;
   width: 34px;
   height: 34px;
-  color: #555;
   font-size: 1.25rem;
   transition: opacity 0.3s;
   text-decoration: none;
@@ -110,6 +109,14 @@ a:hover {
 
 .flab-links a:hover {
   opacity: 0.6;
+}
+
+.flab-link-biorxiv {
+  color: #b5152b;
+}
+
+.flab-link-github {
+  color: #1a1a1a;
 }
 
 /* ── Social icons ── */
