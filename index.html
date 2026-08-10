@@ -68,6 +68,7 @@
         <div class="news-section">
           <h3 class="news-heading">News</h3>
           <div class="news-scroll-wrapper">
+            <div class="news-fade-left" id="newsFadeLeft"></div>
             <button class="news-arrow news-arrow-left" onclick="scrollNews(-1)" aria-label="Scroll left">
               <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
                 <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"/>
@@ -303,19 +304,32 @@
       }
     }
 
+    const CARD_STEP = 157; // 150px card + 7px gap
+    let newsIndex = 0;
+
     function scrollNews(dir) {
       const track = document.getElementById('newsTrack');
-      track.scrollBy({ left: dir * 220, behavior: 'smooth' });
+      const totalCards = track.querySelectorAll('.news-card').length;
+      const maxIndex = totalCards - 4;
+      newsIndex = Math.max(0, Math.min(newsIndex + dir, maxIndex));
+      track.scrollTo({ left: newsIndex * CARD_STEP, behavior: 'smooth' });
+      updateNewsUI(newsIndex, maxIndex);
     }
 
-    // Show/hide left arrow based on scroll position
+    function updateNewsUI(index, maxIndex) {
+      const leftBtn = document.querySelector('.news-arrow-left');
+      const rightBtn = document.querySelector('.news-arrow-right');
+      const fadeLeft = document.getElementById('newsFadeLeft');
+      const show = (el, on) => { el.style.opacity = on ? '1' : '0'; el.style.pointerEvents = on ? 'auto' : 'none'; };
+      show(leftBtn, index > 0);
+      show(rightBtn, index < maxIndex);
+      fadeLeft.style.opacity = index > 0 ? '1' : '0';
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const track = document.getElementById('newsTrack');
-      const leftBtn = document.querySelector('.news-arrow-left');
-      track.addEventListener('scroll', () => {
-        leftBtn.style.opacity = track.scrollLeft > 10 ? '1' : '0';
-        leftBtn.style.pointerEvents = track.scrollLeft > 10 ? 'auto' : 'none';
-      });
+      const totalCards = track.querySelectorAll('.news-card').length;
+      updateNewsUI(0, totalCards - 4);
     });
   </script>
 </body>
