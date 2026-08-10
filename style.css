@@ -111,6 +111,26 @@ a:hover {
   font-size: 1.3rem;
 }
 
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 14px 0 10px;
+}
+
+.sidebar-email {
+  font-size: 0.82rem;
+  color: #666;
+}
+
+.sidebar-email a {
+  color: #666;
+}
+
+.sidebar-email a:hover {
+  color: #0085ff;
+  text-decoration: none;
+}
+
 /* ── Main content ── */
 .main-content {
   padding-top: 0.25rem;
