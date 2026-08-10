@@ -47,7 +47,9 @@ a:hover {
 
 .headshot--flab {
   object-fit: contain;
-  background: white;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .sidebar-info {
