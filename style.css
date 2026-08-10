@@ -271,7 +271,7 @@ a:hover {
 .news-card-img-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #f3f4f6;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
