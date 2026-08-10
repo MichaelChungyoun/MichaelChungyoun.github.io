@@ -341,8 +341,10 @@
       el.classList.add('active');
 
       const data = id === 'flab' ? sidebarFLAb : sidebarAbout;
-      document.querySelector('.headshot').src = data.img;
-      document.querySelector('.headshot').alt = data.alt;
+      const headshot = document.querySelector('.headshot');
+      headshot.src = data.img;
+      headshot.alt = data.alt;
+      headshot.classList.toggle('headshot--flab', id === 'flab');
       document.querySelector('.name').textContent = data.name;
       document.querySelector('.title').textContent = data.title;
       document.querySelector('.subtitle').textContent = data.subtitle;

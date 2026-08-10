@@ -38,9 +38,16 @@ a:hover {
 
 .headshot {
   width: 100%;
+  aspect-ratio: 1288 / 970;
+  object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 0 38px 0 rgba(0, 0, 0, 0.2);
   display: block;
+}
+
+.headshot--flab {
+  object-fit: contain;
+  background: white;
 }
 
 .sidebar-info {
