@@ -285,6 +285,7 @@ a:hover {
   padding: 12px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 
 .news-card-li-icon {
