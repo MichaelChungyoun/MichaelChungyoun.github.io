@@ -328,15 +328,9 @@
 
         <div class="flab-datasets">
           <h3 class="flab-section-heading">Benchmarks</h3>
-          <div class="dataset-entry" onclick="toggleDataset('gdpa1')">
-            <div class="dataset-header">
-              <span class="dataset-title">GDPa1 – Antibody Developability Profiling of 246 IgGs</span>
-              <span class="dataset-chevron" id="chevron-gdpa1">▾</span>
-            </div>
+          <div class="dataset-entry">
+            <strong class="dataset-title">GDPa1 – Antibody Developability Profiling of 246 IgGs</strong>
             <p class="dataset-description">Biophysical assay results for 246 IgGs across 10 developability assays including titer, purity, aggregation, thermostability, colloidal stability, hydrophobicity, heparin binding, self-association, polyreactivity, and DLS-kD.</p>
-            <div class="dataset-results" id="results-gdpa1" style="display:none;">
-              <p class="dataset-results-placeholder">Benchmark results coming soon. <a href="https://huggingface.co/datasets/ginkgo-datapoints/GDPa1" target="_blank" onclick="event.stopPropagation()">View original data →</a></p>
-            </div>
           </div>
         </div>
       </section>
@@ -425,14 +419,6 @@
     function updateNewsUI(index, maxIndex) {
       const fadeLeft = document.getElementById('newsFadeLeft');
       fadeLeft.style.opacity = index > 0 ? '1' : '0';
-    }
-
-    function toggleDataset(id) {
-      const results = document.getElementById('results-' + id);
-      const chevron = document.getElementById('chevron-' + id);
-      const isOpen = results.style.display !== 'none';
-      results.style.display = isOpen ? 'none' : '';
-      chevron.classList.toggle('open', !isOpen);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
