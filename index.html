@@ -42,6 +42,14 @@
             <i class="fas fa-envelope"></i>
           </a>
         </div>
+        <div class="flab-links" style="display:none;">
+          <a href="https://doi.org/10.64898/2025.12.27.696706" target="_blank" title="bioRxiv">
+            <i class="ai ai-biorxiv"></i>
+          </a>
+          <a href="https://github.com/Graylab/FLAb" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
         <hr class="sidebar-divider" />
         <div class="sidebar-email">
           <a href="mailto:chungyounmichael@gmail.com">chungyounmichael@gmail.com</a>
@@ -356,6 +364,7 @@
       document.querySelector('.sidebar-divider').style.display = hide;
       document.querySelector('.sidebar-email').style.display = hide;
       document.querySelector('.cv-placeholder').style.display = hide;
+      document.querySelector('.flab-links').style.display = id === 'flab' ? 'flex' : 'none';
     }
 
     const CARD_STEP = 157; // 150px card + 7px gap
