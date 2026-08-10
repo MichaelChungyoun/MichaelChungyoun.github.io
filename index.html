@@ -118,6 +118,7 @@
       </section>
 
       <section id="flab" style="display:none;">
+        <div class="flab-name">Michael Chungyoun</div>
         <h1 class="section-title">Fitness Landscapes for Antibodies</h1>
       </section>
     </main>
@@ -129,6 +130,15 @@
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.getElementById(id).style.display = '';
       el.classList.add('active');
+      const sidebar = document.querySelector('.sidebar');
+      const wrapper = document.querySelector('.page-wrapper');
+      if (id === 'flab') {
+        sidebar.style.display = 'none';
+        wrapper.style.gridTemplateColumns = '1fr';
+      } else {
+        sidebar.style.display = '';
+        wrapper.style.gridTemplateColumns = '';
+      }
     }
 
     function scrollNews(dir) {
