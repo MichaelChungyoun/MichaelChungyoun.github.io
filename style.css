@@ -174,10 +174,7 @@ a:hover {
 
 .cv-placeholder {
   color: #aaa;
-  font-size: 0.9em;
+  font-size: 0.82rem;
   font-style: italic;
-}
-
-.cv-link {
-  margin-top: 1rem;
+  margin-top: 6px;
 }
