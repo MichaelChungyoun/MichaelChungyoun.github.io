@@ -173,6 +173,14 @@ a:hover {
   padding-top: 0.25rem;
 }
 
+/* ── Page name ── */
+.page-name {
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 /* ── Tab nav ── */
 .tab-nav {
   display: flex;
