@@ -271,18 +271,18 @@ a:hover {
 .news-card-img-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  overflow: hidden;
   background: #f3f4f6;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .news-card-img-wrap img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  padding: 10px;
 }
 
 .news-card-body {
@@ -303,19 +303,24 @@ a:hover {
 
 .news-card-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  flex-direction: column;
+  gap: 3px;
   margin-top: 5px;
+}
+
+.news-stats-row {
+  display: flex;
+  gap: 6px;
 }
 
 .news-stat {
   display: flex;
   align-items: center;
   gap: 2px;
-  font-size: 0.67rem;
+  font-size: 0.6rem;
   color: #666;
 }
 
-.news-stat-impressions {
-  color: #888;
+.news-stat svg {
+  flex-shrink: 0;
 }
