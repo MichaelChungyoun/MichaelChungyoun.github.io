@@ -439,28 +439,28 @@ a:hover {
 
 .dataset-entry {
   max-width: 680px;
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid #a8d5b0;
   border-radius: 6px;
   padding: 12px 16px;
   margin-bottom: 8px;
   cursor: pointer;
-  background: white;
+  background: #ddf2e0;
   transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
 }
 
 .dataset-entry:hover {
   transform: scale(1.015);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  background: #f5f8ff;
+  background: #c8eacc;
 }
 
 .dataset-entry--summary {
-  border-color: #b0c4de;
-  background: #f0f4fa;
+  border-color: #a8c4e0;
+  background: #ddeeff;
 }
 
 .dataset-entry--summary:hover {
-  background: #e6edf8;
+  background: #cce4f7;
 }
 
 .dataset-title {
