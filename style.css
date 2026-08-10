@@ -282,8 +282,10 @@ a:hover {
 
 .news-card-li-icon {
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 5px;
+  left: 5px;
+  display: block;
+  z-index: 1;
 }
 
 .news-card-img-wrap img {
