@@ -206,7 +206,7 @@ a:hover {
 
 .news-scroll-wrapper {
   position: relative;
-  max-width: calc(4 * 150px + 3 * 7px); /* exactly 4 cards */
+  max-width: calc(4 * 150px + 3 * 7px + 75px); /* 4 full cards + half of 5th */
 }
 
 .news-track {
@@ -217,7 +217,16 @@ a:hover {
 }
 
 .news-fade-left {
-  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, #fafafa, transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 5;
 }
 
 .news-arrow {
@@ -266,8 +275,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.15s;
-  position: relative;
-  padding-bottom: 42px;
 }
 
 .news-card:hover {
@@ -338,10 +345,8 @@ a:hover {
 
 .news-card-date {
   font-size: 0.67rem;
-  color: #9ca3af;
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
+  color: #bbb;
+  margin-top: 5px;
 }
 
 .news-card-stats {
