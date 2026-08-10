@@ -357,6 +357,10 @@ a:hover {
   font-size: 11px;
 }
 
+.news-card-li-icon--amazon {
+  background: #FF9900;
+}
+
 .news-card-img-wrap img {
   max-width: 100%;
   max-height: 100%;
