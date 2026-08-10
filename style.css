@@ -456,7 +456,11 @@ a:hover {
 
 .dataset-title {
   font-size: 0.95rem;
-  display: block;
+}
+
+.dataset-source {
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .dataset-description {
