@@ -62,6 +62,36 @@
           data for therapeutic antibody design. I am broadly interested in expanding and improving therapeutic
           options for patients.
         </p>
+
+        <!-- News -->
+        <div class="news-section">
+          <h3 class="news-heading">News</h3>
+          <div class="news-scroll-wrapper">
+            <button class="news-arrow news-arrow-left" onclick="scrollNews(-1)" aria-label="Scroll left">
+              <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
+                <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"/>
+              </svg>
+            </button>
+            <div class="news-track" id="newsTrack">
+
+              <!-- Card 1 -->
+              <a class="news-card" href="https://www.linkedin.com/posts/mfc12_open-access-therapeutic-antibody-data-activity-7424510232644530176-cwac" target="_blank">
+                <div class="news-card-img-wrap">
+                  <img src="images/news/aws.jpeg" alt="Open access therapeutic antibody data" />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-caption">🧬 Open-access therapeutic antibody data release 🧪</span>
+                </div>
+              </a>
+
+            </div>
+            <button class="news-arrow news-arrow-right" onclick="scrollNews(1)" aria-label="Scroll right">
+              <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
+                <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281c-3.9 3-6.1 7.8-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </section>
 
       <section id="flab" style="display:none;">
@@ -77,6 +107,21 @@
       document.getElementById(id).style.display = '';
       el.classList.add('active');
     }
+
+    function scrollNews(dir) {
+      const track = document.getElementById('newsTrack');
+      track.scrollBy({ left: dir * 220, behavior: 'smooth' });
+    }
+
+    // Show/hide left arrow based on scroll position
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('newsTrack');
+      const leftBtn = document.querySelector('.news-arrow-left');
+      track.addEventListener('scroll', () => {
+        leftBtn.style.opacity = track.scrollLeft > 10 ? '1' : '0';
+        leftBtn.style.pointerEvents = track.scrollLeft > 10 ? 'auto' : 'none';
+      });
+    });
   </script>
 </body>
 </html>
