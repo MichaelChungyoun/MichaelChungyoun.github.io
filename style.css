@@ -33,9 +33,6 @@ a:hover {
 
 /* ── Sidebar ── */
 .sidebar {
-  position: sticky;
-  top: 4rem;
-  height: fit-content;
   align-self: start;
 }
 

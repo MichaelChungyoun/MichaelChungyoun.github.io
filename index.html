@@ -317,11 +317,36 @@
   </div>
 
   <script>
+    const sidebarAbout = {
+      img: 'images/headshot.jpg',
+      alt: 'Michael Chungyoun',
+      name: 'Michael Chungyoun',
+      title: 'PhD Student',
+      subtitle: 'Johns Hopkins University',
+      lab: 'Jeffrey Gray Lab'
+    };
+    const sidebarFLAb = {
+      img: 'images/news/flabdominals.png',
+      alt: 'Fitness Landscape for Antibodies',
+      name: 'Fitness Landscape for Antibodies',
+      title: 'Benchmarking protein AI models at predicting antibody developability properties',
+      subtitle: '',
+      lab: ''
+    };
+
     function showTab(id, el) {
       document.querySelectorAll('.main-content section').forEach(s => s.style.display = 'none');
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.getElementById(id).style.display = '';
       el.classList.add('active');
+
+      const data = id === 'flab' ? sidebarFLAb : sidebarAbout;
+      document.querySelector('.headshot').src = data.img;
+      document.querySelector('.headshot').alt = data.alt;
+      document.querySelector('.name').textContent = data.name;
+      document.querySelector('.title').textContent = data.title;
+      document.querySelector('.subtitle').textContent = data.subtitle;
+      document.querySelector('.lab').textContent = data.lab;
     }
 
     const CARD_STEP = 157; // 150px card + 7px gap
