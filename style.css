@@ -284,8 +284,19 @@ a:hover {
   position: absolute;
   top: 5px;
   left: 5px;
-  display: block;
   z-index: 1;
+  width: 18px;
+  height: 18px;
+  background: #0a66c2;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-card-li-icon .fab {
+  color: white;
+  font-size: 11px;
 }
 
 .news-card-img-wrap img {
