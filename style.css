@@ -533,3 +533,27 @@ a:hover {
   margin-top: 6px;
   line-height: 1.5;
 }
+
+/* ── Papers section ── */
+.papers-list {
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.papers-list li {
+  margin-bottom: 1rem;
+}
+
+.papers-list li p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.papers-list li p:first-child {
+  font-size: 0.95rem;
+}
+
+.papers-list li p:last-child {
+  color: #555;
+}
