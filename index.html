@@ -62,11 +62,11 @@
     <main class="main-content">
       <div class="page-name">Michael Chungyoun</div>
       <nav class="tab-nav">
-        <a href="#" class="tab active" onclick="showTab('about', this); return false;">About</a>
-        <a href="#" class="tab" onclick="showTab('flab', this); return false;">FLAb</a>
-        <a href="#" class="tab" onclick="showTab('papers', this); return false;">Papers</a>
-        <a href="#" class="tab" onclick="showTab('blender', this); return false;">Blender</a>
-        <a href="#" class="tab" onclick="showTab('denovo', this); return false;">De novo</a>
+        <a href="#about" class="tab active" onclick="showTab('about', this); return false;">About</a>
+        <a href="#flab" class="tab" onclick="showTab('flab', this); return false;">FLAb</a>
+        <a href="#papers" class="tab" onclick="showTab('papers', this); return false;">Papers</a>
+        <a href="#blender" class="tab" onclick="showTab('blender', this); return false;">Blender</a>
+        <a href="#denovo" class="tab" onclick="showTab('denovo', this); return false;">De novo</a>
       </nav>
 
       <section id="about">
@@ -500,6 +500,7 @@
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.getElementById(id).style.display = '';
       el.classList.add('active');
+      history.replaceState(null, '', '#' + id);
 
       const data = id === 'flab' ? sidebarFLAb : sidebarAbout;
       const headshot = document.querySelector('.headshot');
@@ -518,6 +519,13 @@
       document.querySelector('.sidebar-email').style.display = hide;
       document.querySelector('.cv-placeholder').style.display = hide;
       document.querySelector('.flab-links').style.display = id === 'flab' ? 'flex' : 'none';
+    }
+
+    const VALID_TABS = ['about', 'flab', 'papers', 'blender', 'denovo'];
+    const initialTab = VALID_TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'about';
+    if (initialTab !== 'about') {
+      const tabEl = document.querySelector(`.tab[href="#${initialTab}"]`);
+      if (tabEl) showTab(initialTab, tabEl);
     }
 
     const CARD_STEP = 157; // 150px card + 7px gap
