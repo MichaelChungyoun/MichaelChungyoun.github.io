@@ -557,3 +557,18 @@ a:hover {
 .papers-list li p:last-child {
   color: #555;
 }
+
+.papers-scholar {
+  margin-bottom: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.papers-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.papers-list a:hover strong {
+  color: #0085ff;
+  text-decoration: underline;
+}
