@@ -232,10 +232,17 @@ a:hover {
 }
 
 .cv-placeholder {
-  color: #aaa;
+  color: #666;
   font-size: 0.82rem;
-  font-style: italic;
+  font-style: normal;
+  text-decoration: none;
   margin-top: 6px;
+  display: inline-block;
+}
+
+.cv-placeholder:hover {
+  color: #0085ff;
+  text-decoration: underline;
 }
 
 /* ── News section ── */
